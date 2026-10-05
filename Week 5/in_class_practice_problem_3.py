@@ -1,31 +1,11 @@
-def isValid(s):
-    pairs = {
-        ")":"(",
-        "]":"[", 
-        "}":"{"
-    }
-    stack = []
-    for character in s:
-        #if the character is a closing bracket
-        if character in pairs:
-            if stack and stack[-1] == pairs[character]: #checking that we are closing brackets in the right order
-                stack.pop()
-            else:
-                return False    #s is invalid
-        #if the character is an open bracket
-        else:
-            stack.append(character)
-    if stack: #check if the stack is empty
-        return False
-    else:
-        return True
+# Today’s problem is calculating the Fibonacci series using recursion. 
+# The problem is described here: https://leetcode.com/problems/fibonacci-number/description/ 
+# The solution we will go over is an adaptation of LeetCode user Vaishnav’s solution found here: https://leetcode.com/problems/fibonacci-number/solutions/7205782/with-recursion-python-3 
 
-test_string_1 = "(){}([{{}}])" 
-test_string_2 = "()[]{}"
-test_string_3 = "(]"
-test_string_4 = "([])"
 
-print(isValid(test_string_1)) #True
-print(isValid(test_string_2)) #True
-print(isValid(test_string_3)) #False
-print(isValid(test_string_4)) #True
+def recursive_fibonacci(index):
+    if index <= 1: #base case
+        return index
+    return recursive_fibonacci(index - 1) + recursive_fibonacci (index - 2)
+
+print(recursive_fibonacci(10))
