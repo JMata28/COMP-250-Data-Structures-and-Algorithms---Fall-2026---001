@@ -43,9 +43,10 @@ def bfs_traverse(root):
         node = queue.popleft()
         print(node.data)
         
-        if node.left:
-            queue.append(node.left)
+
         if node.right:
             queue.append(node.right)
+        if node.left:
+            queue.append(node.left)
 
 bfs_traverse(root)
