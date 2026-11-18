@@ -26,21 +26,21 @@ for u, v in A:
 
 print(D)
 
-#BFS with queue 
-print()
-source = 0 
+# #BFS with queue 
+# print()
+# source = 0 
 
-from collections import deque
+# from collections import deque
 
-seen = set()
-seen.add(source)
-q = deque()
-q.append(source)
+# seen = set()
+# seen.add(source)
+# q = deque()
+# q.append(source)
 
-while q:
-    node = q.popleft()
-    print(node)
-    for neighbor_node in D[node]:
-        if neighbor_node not in seen:
-            seen.add(neighbor_node)
-            q.append(neighbor_node)
+# while q:
+#     node = q.popleft()
+#     print(node)
+#     for neighbor_node in D[node]:
+#         if neighbor_node not in seen:
+#             seen.add(neighbor_node)
+#             q.append(neighbor_node)
